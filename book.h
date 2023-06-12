@@ -1,14 +1,22 @@
-#ifndef __BOOK_H_
-#define __BOOK_H_
-// #include "date.h"
-typedef struct book {
-    int id;
-    char name[40];
-    float price;
-    date_t publish;
-} book_t;
+    #ifndef __BOOK_H_
+    #define __BOOK_H_
+    // #include "date.h"
+    #ifndef ___USER.H
 
-void accept_book(book_t *b);
-void print_book(book_t *b);
+    typedef struct book {
+        int id;
+        char name[50];
+        char author[50];
+        char subject[30];
+        double price;
+        char isbn[16];
+    }book_t;
 
-#endif
+    typedef struct bookcopy {
+        int id;
+        int bookid;
+        int rack;
+        char status[16];
+    }bookcopy_t;
+
+    #endif
