@@ -1,5 +1,5 @@
-#ifndef USER 
-#define USER H
+#ifndef ___USER.H
+#define ___USER.H
 #define USER_FILE "user.db"
  //id, name, email, password, phone, role)
 enum rol {owner,librarian,member};
@@ -11,7 +11,8 @@ typedef
     char password[20] ;
     char phone[30];
     enum rol role; 
-}user ;
-    #endif 
+}user_t;
+
+#endif 
     
 

@@ -2,7 +2,7 @@
 
 #ifndef ___USER.H
 #define ___USER.H
- #define USER_FILE "user.db"
+#define USER_FILE "user.db"
  
 struct user{
     int id;
@@ -11,11 +11,11 @@ struct user{
     char email[30];
     char password[20] ;
     char phone[30];
+}user_t;
 
-    };printf("choice option \n ");
-            printf("1.Adding user \n");
-            printf("2.search a user by id\n");
-            printf ("3.search a user by mail  \n");
-            
+int user_save();
+int user_update();
+int user_find_by_email();
+int user_find_by_id();
             
 #endif
