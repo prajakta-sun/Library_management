@@ -1,9 +1,10 @@
 //for tier 1
 
-#ifndef ___USER.H
-#define ___USER.H
+#ifndef ___USER_DAL_H
+#define ___USER_DAL_H
+#include "user.h"
 #define USER_FILE "user.db"
- 
+
 struct user{
     int id;
     enum num;

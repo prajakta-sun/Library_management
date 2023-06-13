@@ -13,6 +13,5 @@ typedef
     enum rol role; 
 }user_t;
 
-#endif 
-    
+#endif
 

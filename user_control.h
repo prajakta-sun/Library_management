@@ -20,7 +20,7 @@ void user_accept(user_t *u);
 void user_print(user_t *u);
 int user_get_max_id(user_t *u);
 int sign_in();
-int signup();
+int sign_up();
 void edit_profile();
 void change_passwd();
 
