@@ -36,8 +36,8 @@
 //find book by isbn
 {
     printf("enter book isbn to find: ");
-    scanf("%c",isbn);
-    strupr(isbn);
+    scanf("%s",isbn);
+    str(isbn);
     
     fp = fopen("book.db", "rb");
     if(fp == NULL)
@@ -49,7 +49,7 @@
    
     while( fread(&b, sizeof(struct book), 1, fp) > 0 ) 
        { 
-        strupr(b.isbn);
+        str(b.isbn);
         if(strstr(b.isbn, isbn) != NULL) {
             found = 1;
            { print_book(&b);
@@ -128,7 +128,7 @@
 //   FILE *fp;
 //     struct bookcopy b;
     {
-    fp = fopen("book.db", "ab");
+    fp = fopen("book.txt", "ab");
     if(fp == NULL) {
         perror("fopen() failed");
         exit(1);
@@ -141,13 +141,13 @@
     //bookcopy get available id
 
 	printf("enter the bookcopy id ");
-	scanf("%s", &bookcopy_id);
+	scanf("%d", &bookcopy_id);
 	// open book copies file
-	fp = fopen("bookcopy.db", "rb");
+	fp = fopen("bookcopy.txt", "rb");
 	if(fp == NULL) {
 		perror("cannot open bookcopies file.");
     }
 
     //bookcopy_get_available_count();
-
+     
 		return 0;

@@ -1,7 +1,7 @@
-    #ifndef __BOOK_H_
-    #define __BOOK_H_
+    // #ifndef __BOOK_H_
+    // #define __BOOK_H_
     // #include "date.h"
-    #ifndef ___USER.H
+    #include "user.h"
 
     typedef struct book {
         int id;
@@ -19,4 +19,4 @@
         char status[16];
     }bookcopy_t;
 
-    #endif
+   // #endif

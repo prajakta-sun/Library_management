@@ -19,57 +19,55 @@
 // }
 
   //void add_user()
-{
-    FILE *fp;
+
+   { FILE *fp;
     struct user u;
     accept_user(&u);
     // open file for appending
     fp = fopen("user.db", "w");
     if(fp == NULL) {
-        perror("fopen() failed");
+        perror("fopen() failed");}
         exit(1);
-    }
+    
   
     fwrite(&u, sizeof( user_t), 1, fp);
-    printf("New user saved.\n");
-  
+    {printf("New user saved.\n");
+    }
     fclose(fp);
- }
+ 
 
  //void search_a_user_by_email()
- {
+   
    FILE *fp;
     struct user_t *u;
     // open file for reading
     fp = fopen("user.db", "r");
-    if(fp == NULL) {
-        perror("fopen() failed");
-        exit(1);
-    }    
+    if(fp == NULL) 
+        {perror("fopen() failed");
+        exit(1);}
+       
    
-    while(fread(&u, sizeof( user_t), 1, fp) > 0) {
-        print_user(&u);
-    } 
+    while(fread(&u, sizeof( user_t), 1, fp) > 0) 
+        {print_user(&u);}
+    
 
   
     fclose(fp);
-}
-  //void search_a_user_by_id()
-{
-    FILE *fp;
+// }
+//   //void search_a_user_by_id()
+// {
+     FILE *fp;
     struct user_t*u;
     
     fp = fopen("user.db", "r");
     if(fp == NULL) 
-    {
-        perror("fopen() failed");
-        exit(1);
-    }    
-   
-    while(fread(&u, sizeof( user_t), 1, fp) > 0) {
-        print_user(&u);
-    } 
 
+        {perror("fopen() failed");
+        exit(1);}
+    
+   
+    while(fread(&u, sizeof( user_t), 1, fp) > 0) 
+        {print_user(&u);}
 
     fclose(fp);
 
