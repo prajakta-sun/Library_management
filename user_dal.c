@@ -19,8 +19,8 @@
 // }
 
   //void add_user()
-
-   { FILE *fp;
+    {
+   FILE *fp;
     struct user u;
     accept_user(&u);
     // open file for appending

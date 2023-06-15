@@ -6,15 +6,15 @@
  
 enum rol {owner,librarian,member};
 
- struct user {
+//  struct user {
    
-    int id;
-    char name[40];
-    char email[30];
-    char password[20];
-    char phone[30];
-    enum rol role;
-    }user_t;
+//     int id;
+//     char name[40];
+//     char email[30];
+//     char password[20];
+//     char phone[30];
+//     enum rol role;
+//     }user_t;
     
 void user_accept(user_t *u);
 void user_print(user_t *u);

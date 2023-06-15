@@ -1,12 +1,12 @@
 #include<stdio.h>
 #include "book_dal.h"
-//save book
- 
-    //  file *fp;
-    //  struct book b ;
 
-  {
-    fp = fopen("book_db", "rb");
+    void book_save(book_t *b)
+    {
+        // file*fp;
+         struct book b;
+    
+        fp = fopen("book.db", "rb");
     if(fp == NULL) {
         perror("fopen() failed");
         exit(1);
@@ -17,11 +17,11 @@
     fclose(fp);}
  }
  
-//updae_all_books()
+    void update_all_books()
  
-    // file *fp;
-    // struct book b;
-    {
+    //  file *fp;
+    //
+     {
     fp = fopen("book.db", "ab");
     if(fp == NULL) {
         perror("fopen() failed");
@@ -33,8 +33,12 @@
     }
     fclose(fp);
      }
-//find book by isbn
-{
+
+
+    void find_book_by_isbn(){
+    // file *fp;
+     struct book b;
+
     printf("enter book isbn to find: ");
     scanf("%s",isbn);
     str(isbn);
@@ -61,8 +65,11 @@
     
     fclose(fp);
 }
-    //find book by title
+     void find_book_by_title()
     {
+    // file *fp;
+     struct book b;
+    
     printf("enter title to find: ");
     scanf("%s", title);
     str(title);
@@ -107,13 +114,13 @@
         }
     while(choice != 0);
 }
-//save bookcopy
-{
+ void bookcopy_save(book_t *b)
+ {
     //   file *fp;
-    // struct book b ;
+     struct book *b ;
 
   
-    fp = fopen("book_db", "rb");
+    fp = fopen("book.db", "rb");
     if(fp == NULL) {
         perror("fopen() failed");
         exit(1);
@@ -123,12 +130,13 @@
     printf("New bookcopy saved.\n");
     fclose(fp);
 }
-//bookcopy_update();
+ void bookcopy_update()
+ {
 
-//   FILE *fp;
-//     struct bookcopy b;
-    {
-    fp = fopen("book.txt", "ab");
+     FILE *fp;
+     struct bookcopy b;
+    
+    fp = fopen("book.db", "ab");
     if(fp == NULL) {
         perror("fopen() failed");
         exit(1);
@@ -138,16 +146,35 @@
     }
     fclose(fp);
     }
-    //bookcopy get available id
+    void bookcopy_get_available_id()
+    {
 
-	printf("enter the bookcopy id ");
-	scanf("%d", &bookcopy_id);
+	 int book_id;
+	 FILE *fp;
+	 bookcopy_t bc;
+	 int count = 0;
+	 input book id
+	
+    printf("enter the book id: ");
+	scanf("%d", &book_id);
+    }
 	// open book copies file
-	fp = fopen("bookcopy.txt", "rb");
+	fp = fopen("bookcopy.db", "rb");
 	if(fp == NULL) {
 		perror("cannot open bookcopies file.");
-    }
+		return;
+	}
 
-    //bookcopy_get_available_count();
-     
-		return 0;
+	// read bookcopy records one by one
+	while(fread(&bc, sizeof(bookcopy_t), 1, fp) > 0)
+     {
+		if(bc.bookid == book_id && strcmp(bc.status, status_available)==0) {
+			bookcopy_display(&bc);
+			count++;
+		}
+	}
+	fclose(fp);
+		{
+            printf("no copies availables.\n");
+        }
+int bookcopy_get_available_count()

@@ -96,3 +96,23 @@
     * book_accept(), book_print()
     * add_new_book(), change_rack(), check_book_availability(), ...
 
+--------------------------------------------------------
+### Day 10+Tasks
+* check_book_availability(isbn)
+    * copy_find_available(isbn, &total_count, &avail_count); -- book_dal.c
+* Create issuerecord.h -- struct issuerecord (copy_id, member_id, date, ...)
+* issuerecord_dal.h, issuerecord_dal.c
+    * issuerecord_save(), issuerecord_update(), issuerecord_find_last_by_id(copy_id)
+* issuerecord_service.h, issuerecord_service.c
+    * issuerecord_add()
+        * issuerecord_save()
+        * copy_find_by_id(), copy_edit() -- status = issued
+    * issuerecord_edit()
+        * issuerecord_find_last_by_id()
+        * check return date, calculate fine if any.
+        * issuerecord_update()
+        * copy_find_by_id(), copy_edit() -- status = avail
+        * if fine, then payment_save() -- future implementation
+* issuerecord_control.h, issuerecord_control.c
+    * issue_book()
+    * return_book()

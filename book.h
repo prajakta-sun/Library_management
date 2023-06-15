@@ -17,6 +17,7 @@
         int bookid;
         int rack;
         char status[16];
+        int isbn;
     }bookcopy_t;
 
    // #endif
